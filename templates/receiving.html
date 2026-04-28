@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Data Received</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #e6e0ef; /* Light purple background */
+        }
+        .header h1 {
+            margin: 0;
+            color: #060748; /* Dark blue text */
+            font-size: 24px;
+        }
+        main {
+            background-color: #ffcbe0; /* Light pink background */
+            padding: 30px 50px;
+            padding-bottom: 50px;
+        }
+        .data-group {
+            display: flex;
+            padding: 12px 0;
+        }
+        .data-group label {
+            flex: 1;
+            font-weight: bold;
+            color: #b31bcf; /* Purple labels */
+        }
+        .data-group span {
+            flex: 2;
+            color: #ff1111; /* Red values */
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PURNEA UNIVERSITY</h1>
+        </div>
+        <main>
+            <div class="data-container">
+                <div class="data-group">
+                    <label>Student Name:</label>
+                    <span>{{ form_data.student_name }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Father's Name:</label>
+                    <span>{{ form_data.father_name }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Mother's Name:</label>
+                    <span>{{ form_data.mother_name }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Date of Birth:</label>
+                    <span>{{ form_data.dob }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Gender:</label>
+                    <span>{{ form_data.gender }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Full Address:</label>
+                    <span>{{ form_data.address }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Religion:</label>
+                    <span>{{ form_data.religion }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Nationality:</label>
+                    <span>{{ form_data.nationality }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Phone Number:</label>
+                    <span>{{ form_data.phone }}</span>
+                </div>
+                <div class="data-group">
+                    <label>EID:</label>
+                    <span>{{ form_data.eid }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Blood Group:</label>
+                    <span>{{ form_data.blood_group }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Marital Status:</label>
+                    <span>{{ form_data.marital_status }}</span>
+                </div>
+                <div class="data-group">
+                    <label>Course Name:</label>
+                    <span>{{ form_data.course }}</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="footer">
+        <h3>Application Status: Submitted Successfully</h3>
+    </div>
+</body>
+</html>

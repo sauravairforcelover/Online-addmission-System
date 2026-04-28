@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <style>
+        body {
+            background-image: url("{% static 'background.jpg' %}"); /* Placeholder for the building image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+        .header-section {
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        .header-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #060748;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+        }
+        .signup-container {
+            border: 2px solid rgb(54, 8, 224);
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(245, 220, 220, 0.5);
+            width: 400px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .signup-container h2 {
+            margin-bottom: 20px;
+            background-color: #420edc;
+            border-radius: 25px;
+            padding: 10px;
+            color: white;
+        }
+        .signup-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #9910dd;
+            border-radius: 25px;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .signup-container input:focus {
+            border-color: #69049c;
+            outline: none;
+        }
+        .signup-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #cc66ff;
+            border: none;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        .signup-container button:hover {
+            background-color: #b359cc;
+        }
+        .login-link {
+            margin-top: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        .login-link a {
+            color: #ffccff;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <img src="{% static 'purnea.jpeg' %}" alt="Logo" class="logo">
+        <div class="header-title">PURNEA UNIVERSITY</div>
+    </div>
+    <div class="signup-container">
+        <h2>Signup</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="first-name" placeholder="First Name" required />
+            <input type="text" name="last-name" placeholder="Last Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <button type="submit">Sign Up</button>
+        </form>
+        {% if messages %}
+            <div style="margin-top: 10px;">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="login-link">
+            <p>Already have an account? <a href="{% url 'webpage2' %}">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>
